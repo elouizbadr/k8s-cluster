@@ -1,0 +1,17 @@
+[k8s-cluster]
+k8s-master-1	ansible_ssh_host=10.168.0.31
+k8s-worker-1	ansible_ssh_host=10.168.0.41
+k8s-worker-2	ansible_ssh_host=10.168.0.42
+k8s-worker-3	ansible_ssh_host=10.168.0.43
+
+[k8s-masters]
+k8s-master-1
+
+[k8s-workers]
+k8s-worker-1
+k8s-worker-2
+k8s-worker-3
+
+[k8s-cluster:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=root

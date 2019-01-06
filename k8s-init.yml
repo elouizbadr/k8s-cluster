@@ -1,0 +1,11 @@
+- hosts: k8s-cluster
+  tasks:
+    - name: disable swap
+      shell: swapoff -a
+
+    - name: update /etc/hosts file
+      blockinfile:
+        dest: /etc/hosts
+        content: "{{ lookup('template', 'templates/etc-hosts.j2') }}"
+        state: present
+
